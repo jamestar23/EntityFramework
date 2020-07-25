@@ -8,7 +8,9 @@ namespace School.Controller
     {
         void Create(params T[] items);
 
-        List<T> Read();
+        List<T> GetAll();
+        List<T> GetSingle(int id);
+
 
         void Update(params T[] items);
 

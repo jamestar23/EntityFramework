@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace School.Controller
@@ -38,10 +40,23 @@ namespace School.Controller
 
         }
 
-        public List<StudentPoco> Read()
+        public List<StudentPoco> GetAll()
         {
-            return 
+            return db.Students.ToList();
         }
+
+        public List<StudentPoco> GetSingle(int id)
+        {
+            
+            //var student = db.Students.Find(id);
+            //if (student == null)
+            //{
+            //    Console.WriteLine("No data found!");
+            //}
+            //return student;
+        }
+
+  
 
         public void Update(params StudentPoco[] items)
         {
