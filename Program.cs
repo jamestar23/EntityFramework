@@ -1,4 +1,6 @@
-﻿using System;
+﻿using School.Controller;
+using System;
+using System.Collections.Generic;
 
 //github.com/johnhinz/InClassJuly25EFCore.git
 
@@ -8,7 +10,15 @@ namespace School
     {
         static void Main(string[] args)
         {
+            EFGenericRepository<StudentPoco> students = new EFGenericRepository<StudentPoco>();
+            students.Add(new StudentPoco()
+            {
+                Courses = new List<CoursePoco>()
+                {   new CoursePoco() { Name =".Net Bridging"}},
 
+                Name = "James Estrella"
+                
+            });
         }
     }
 }
